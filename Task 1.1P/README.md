@@ -18,7 +18,7 @@ In this program:
 To make it safer and easier for Linda to enter her house at night
 
 ## How the System Works
-When the button is pressed, the program records the current time and switches both LEDs on.
+When the button is pressed, the program records the current time and turns on both LEDs.
 
 Each light has its own timer:
 - The porch LED turns off after 30 seconds
@@ -38,7 +38,7 @@ It only starts the timers once per press.
 ## Code Structure
 
 ### `setup()`
-This function defines the porch LED pin and hallway LED pin as outputs and configures the button pin as `INPUT_PULLUP`.
+This function defines both the porch and hallway LED pins as outputs and configures the button pin as `INPUT_PULLUP`.
 
 ### `loop()`
 Detects the button press and calls the update functions continuously.
@@ -57,7 +57,7 @@ Checks if 60 seconds have passed and turns the hallway LED off
 
 
 ## Demonstration Video
-Link:
+Link: https://drive.google.com/file/d/1Wted5AZRVwjBTZ1OnAWSITp0ifEwLvA8/view?usp=sharing 
 
 ## Modular Programming
 Modular programming helped keep the logic organised.
