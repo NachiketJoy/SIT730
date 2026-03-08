@@ -42,14 +42,14 @@ void triggerLights() {
 }
 
 void updatePorchLight() {
-  if (porchOn && millis() - porchStart >= 5000) {
+  if (porchOn && millis() - porchStart >= 30000) {
     digitalWrite(PORCH_LED_PIN, LOW);
     porchOn = false;
   }
 }
 
 void updateHallLight() {
-  if (hallOn && millis() - hallStart >= 8000) {
+  if (hallOn && millis() - hallStart >= 60000) {
     digitalWrite(HALL_LED_PIN, LOW);
     hallOn = false;
   }
