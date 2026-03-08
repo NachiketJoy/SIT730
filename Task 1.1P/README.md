@@ -53,16 +53,16 @@ Checks if 30 seconds have passed and turns the porch LED off
 Checks if 60 seconds have passed and turns the hallway LED off
 
 ## Circuit Schematic
-- [alt text](Light_on.png)
+- [Circuit Diagram](Light_on.png)
 
 
 ## Demonstration Video
 Link:
 
 ## Modular Programming
-Modular programming helped keep the logic organized.
+Modular programming helped keep the logic organised.
 
-Each part of the behavior (button press, porch timer, hallway timer) is handled by its own function.
+Each part of the behaviour (button press, porch timer, hallway timer) is handled by its own function.
 
 This made it easier to test each part separately and adjust timing without touching the rest of the code.
 
@@ -75,18 +75,18 @@ If more lights or sensors are added later, new modules can be added without chan
 
 ## Future Modules for Smart Assisted Living
 ### 1. Arrival Detection Module
-Lights turn on automatically when Linda approaches the house using a small tag on her. This would remove the need for Linda to press a button.
+The lights turn on automatically when Linda approaches the house using a small tag on her. This would remove the need for Linda to press a button.
 
 ### 2. Routine‑Based Automation Module
 This module will learn Linda’s usual arrival times and adjusts lighting automatically.
 
 ### 3. Progressive Pathway Lighting Module
-Add more lights and this module would turn lights on as Linda walks forward and turn lights off behind her automatically
+Add more lights, and this module would turn lights on as Linda walks forward and turn lights off behind her automatically
 
 ## ARM‑Based Embedded System
 Modern cars include an Advanced Driver Assistance System (ADAS) that helps the driver stay safe on the road.
 
-The ADAS controller is an embedded system built around an ARM‑based processor as they are efficient and suitable for real‑time decision‑making.
+The ADAS controller is an embedded system built around an ARM‑based processor, as they are efficient and suitable for real‑time decision‑making.
 
 ### How the ARM Processor Is Used
 The ARM processor inside the ADAS controller processes data from multiple sensors and supports features such as:
@@ -99,7 +99,7 @@ The ARM processor inside the ADAS controller processes data from multiple sensor
 Front‑facing and side cameras provide visual information for lane detection, object recognition, and traffic signs.
 
 - Radar Sensors
-Used to measure distance and speed of vehicles ahead, especially for adaptive cruise control and collision avoidance.
+Used to measure the distance and speed of vehicles ahead, especially for adaptive cruise control and collision avoidance.
 
 ### Recent Methods and Frameworks Used in Embedded System Design
 - Model‑Based Development (MBD)
