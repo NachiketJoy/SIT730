@@ -4,24 +4,18 @@
 #include <Wire.h>
 
 // ---------- WiFi Setup----------
-char ssid[] = "Optus_B628_353E";
-char pass[] = "3Mqaq5RELDB";
+char ssid[] = "Wifi-SSID";
+char pass[] = "Wifi-Password";
 
-
-// char appPassword= "vsdj kcia avtf fghz"
 
 WiFiClient tsClient;
 
-// ---------- ThingSpeak ----------
-unsigned long channelID = 3291392;
-const char * writeAPIKey = "QRJF38XPVO4RLV90";
-
 // ---------- MQTT Setup----------
-#define MQTT_SERVER "075a2ed74b2d4cfda5a5afe6d7859a25.s1.eu.hivemq.cloud"
+#define MQTT_SERVER "Server.s1.eu.hivemq.cloud"
 #define MQTT_PORT 8883
 #define MQTT_TOPIC "sensor/motion"
-#define MQTT_USER "Ovi10"
-#define MQTT_PASSWORD "Lbje9U.xE@v8Xvn"
+#define MQTT_USER "Username"
+#define MQTT_PASSWORD "Password"
 
 // SSL client required for HiveMQ Cloud
 WiFiSSLClient wifiSSLClient;
@@ -42,17 +36,16 @@ void setup() {
 
   pinMode(5, OUTPUT);
 
-  // Connect WiFi
   connectWiFi();
 
   // Initialize I2C + BH1750
   Wire.begin();
   delay(200); 
   
-if (!lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE, 0x23, &Wire)) {
+if (!lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE, 0x23)) {
   Serial.println("Error initializing BH1750!");
   delay(2000);
-  return; // don't freeze board
+  return;
 }
 
   Serial.println(F("BH1750 Test"));
@@ -117,61 +110,3 @@ void connectMQTT() {
     }
   }
 }
-
-
-// Test code
-// #include <Wire.h>
-
-// void setup() {
-//   Serial.begin(9600);
-//   Wire.begin();
-//   Serial.println("Scanning...");
-// }
-
-// void loop() {
-//   byte error, address;
-//   int count = 0;
-
-//   for (address = 1; address < 127; address++) {
-//     Wire.beginTransmission(address);
-//     error = Wire.endTransmission();
-
-//     if (error == 0) {
-//       Serial.print("I2C device found at 0x");
-//       Serial.println(address, HEX);
-//       count++;
-//     }
-//   }
-
-//   if (count == 0) Serial.println("No I2C devices found");
-//   delay(2000);
-// }
-
-
-// Test code for scanning I2C devices on the bus
-// void setup() {
-//   Serial.begin(9600);
-//   while (!Serial); // important for Nano 33 IoT
-//   Wire.begin();
-// }
-
-// void loop() {
-//   Serial.println("Scanning...");
-
-//   byte count = 0;
-
-//   for (byte address = 1; address < 127; address++) {
-//     Wire.beginTransmission(address);
-//     if (Wire.endTransmission() == 0) {
-//       Serial.print("Found device at 0x");
-//       Serial.println(address, HEX);
-//       count++;
-//     }
-//   }
-
-//   if (count == 0) {
-//     Serial.println("No I2C devices found");
-//   }
-
-//   delay(3000); // scan every 3 seconds
-// }
