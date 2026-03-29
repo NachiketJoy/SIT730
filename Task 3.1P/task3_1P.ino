@@ -21,8 +21,6 @@ WiFiClient tsClient;
 WiFiSSLClient wifiSSLClient;
 PubSubClient mqttClient(wifiSSLClient);
 
-
-
 // ---------- Sensors ----------
 BH1750 lightMeter;
 
