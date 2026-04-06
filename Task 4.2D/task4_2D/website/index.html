@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Task 4.2D</title>
+  </head>
+
+  <body>
+    <h1>Calling a function from the Web</h1>
+
+    <div class="container">
+      <!-- LIVING ROOM -->
+      <div class="card">
+        <h3>Living Room</h3>
+        <div>
+          <ul class="toggle-button-group">
+            <li>
+              <button class="btn on" onclick="toggleLED('living room', 'on')">
+                ON
+              </button>
+            </li>
+            <li>
+              <button class="btn off" onclick="toggleLED('living room', 'off')">
+                OFF
+              </button>
+            </li>
+          </ul>
+
+          <div>
+            <input type="number" id="livingTimer" placeholder="Seconds" />
+            <button onclick="setTimer('living room', 'livingTimer')">
+              Set Timer
+            </button>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <!-- BATHROOM -->
+      <div class="card">
+        <h3>Bathroom</h3>
+        <div>
+          <ul class="toggle-button-group">
+            <li>
+              <button class="btn on" onclick="toggleLED('bathroom', 'on')">
+                ON
+              </button>
+            </li>
+            <li>
+              <button class="btn off" onclick="toggleLED('bathroom', 'off')">
+                OFF
+              </button>
+            </li>
+          </ul>
+
+          <div>
+            <input type="number" id="bathroomTimer" placeholder="Seconds" />
+            <button onclick="setTimer('bathroom', 'bathroomTimer')">
+              Set Timer
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLOSET -->
+      <div class="card">
+        <h3>Closet</h3>
+
+        <div>
+          <ul class="toggle-button-group">
+            <li>
+              <button class="btn on" onclick="toggleLED('closet', 'on')">
+                ON
+              </button>
+            </li>
+            <li>
+              <button class="btn off" onclick="toggleLED('closet', 'off')">
+                OFF
+              </button>
+            </li>
+          </ul>
+
+          <div>
+            <input type="number" id="closetTimer" placeholder="Seconds" />
+            <button onclick="setTimer('closet', 'closetTimer')">
+              Set Timer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const BASE_URL = "http://192.168.8.107";
+
+      function toggleLED(room, state) {
+        const url = `${BASE_URL}/toggle?room=${encodeURIComponent(room)}&state=${state}`;
+        fetch(url).catch(console.error);
+      }
+
+      function setTimer(room, inputId) {
+        const seconds = document.getElementById(inputId).value;
+        if (!seconds || seconds <= 0) {
+          alert("Enter valid time");
+          return;
+        }
+        const url = `${BASE_URL}/timer?room=${encodeURIComponent(room)}&time=${seconds}`;
+        fetch(url).catch(console.error);
+      }
+    </script>
+  </body>
+</html>
