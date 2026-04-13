@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #ccc;
+  padding: 1px 16px;
+  border-radius: 8px;
+}
+
+button {
+  margin-bottom: 8px;
+  padding: 6px 12px;
+}
+
+.btn {
+  width: 100%;
+  color: white;
+}
+
+.on {
+  background: #4caf50;
+  border: none;
+}
+
+.off {
+  background: #f44336;
+  border: none;
+}
+
+input {
+  padding: 6px;
+  width: 80px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 100%;
+}
+
+.toggle-button-group {
+  display: flex;
+  gap: 8px;
+}
